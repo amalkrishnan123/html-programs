@@ -1,0 +1,262 @@
+<html>
+    
+<head>
+
+    <style>
+        .flip-card {
+  perspective: 1000px;
+  min-height: 400px; /* Set a minimum height for the flip card */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0; /* Set the top and left properties to ensure */
+  left: 0; /* the front and back cards are overlaid on each other */
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-front,
+.flip-card-back {
+  /* ... existing styles ... */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: transparent;
+  min-height: 400px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /* Ensure the front card stays on top initially */
+}
+
+.flip-card-front img {
+  object-fit: cover; /* This will ensure the image covers the entire container */
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+.flip-card-back {
+  /* ... existing styles ... */
+  transform: rotateY(-180deg);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-text {
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.flip-card-back {
+  box-sizing: border-box; /* make padding included in the height */
+  background-color: #bbb;
+  color: white;
+
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.flip-card-back .content-container {
+  padding: 15px;
+  height: 100%;
+  overflow-y: auto;
+}
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row gy-4">
+  
+      <!-- Flip Card -->
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <img src="https://picsum.photos/400/400?random=4900" alt="Random Image" class="img-fluid w-100 h-100">
+              <div class="flip-text">Item One</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <div class="content-container">
+                <h5>Back Title</h5>
+                <p>Bacon ipsum dolor amet meatball jerky brisket ribeye turducken pastrami shank, picanha pork loin doner cupim chicken flank pig. Fatback ham burgdoggen pastrami corned beef swine beef ribs chicken shoulder flank turducken pancetta.</p>
+                <p> Rump sirloin andouille, brisket tri-tip shoulder capicola pork loin kevin short loin t-bone corned beef. Cow turducken jerky short loin tail buffalo tenderloin kevin drumstick porchetta cupim pastrami chuck chislic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- You can repeat the above structure for more flip cards and just change the random value in the image URL -->
+      <!-- Flip Card -->
+      <div class="col-lg-3 col-md-4  col-sm-6  col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <img src="https://picsum.photos/400/400?random=17" alt="Random Image" class="img-fluid w-100 h-100">
+              <div class="flip-text">Item Two</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <div class="content-container">
+                <h5>Back Title</h5>
+                <p>Some text about this flip card.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- 3rd -->
+      <!-- Flip Card -->
+      <div class="col-lg-3 col-md-4  col-sm-6 col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <img src="https://picsum.photos/400/400?random=5" alt="Random Image" class="img-fluid w-100 h-100">
+              <div class="flip-text">This is the third item with a longer title</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <div class="content-container">
+                <h5>Back Title</h5>
+                <p>Some text about this flip card.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- 4th -->
+      <!-- Flip Card -->
+      <div class="col-lg-3 col-md-4  col-sm-6 col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <img src="https://picsum.photos/400/400?random=256" alt="Random Image" class="img-fluid w-100 h-100">
+              <div class="flip-text">Item Four</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <div class="content-container">
+                <h5>Back Title</h5>
+                <p>Some text about this flip card.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- within row class -->
+  
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- contain end -->
+  
+  <p class="p-4 m-4">The lower version uses 3 columns instead of 4</p>
+  
+  <div class="container mt-5">
+    <div class="row gy-4">
+  
+      <!-- Flip Card -->
+      <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <img src="https://picsum.photos/400/400?random=900" alt="Random Image" class="img-fluid w-100 h-100">
+              <div class="flip-text">Item One</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <div class="content-container">
+                <h5>Back Title</h5>
+                <p>Bacon ipsum dolor amet meatball jerky brisket ribeye turducken pastrami shank, picanha pork loin doner cupim chicken flank pig. Fatback ham burgdoggen pastrami corned beef swine beef ribs chicken shoulder flank turducken pancetta.</p>
+                <p> Rump sirloin andouille, brisket tri-tip shoulder capicola pork loin kevin short loin t-bone corned beef. Cow turducken jerky short loin tail buffalo tenderloin kevin drumstick porchetta cupim pastrami chuck chislic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- You can repeat the above structure for more flip cards and just change the random value in the image URL -->
+      <!-- Flip Card -->
+      <div class="col-lg-4 col-md-4  col-sm-6  col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <img src="https://picsum.photos/400/400?random=1775" alt="Random Image" class="img-fluid w-100 h-100">
+              <div class="flip-text">Item Two</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <div class="content-container">
+                <h5>Back Title</h5>
+                <p>Some text about this flip card.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- 3rd -->
+      <!-- Flip Card -->
+      <div class="col-lg-4 col-md-4  col-sm-6 col-12">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <img src="https://picsum.photos/400/400?random=335" alt="Random Image" class="img-fluid w-100 h-100">
+              <div class="flip-text">This is the third item with a longer title</div>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <div class="content-container">
+                <h5>Back Title</h5>
+                <p>Some text about this flip card.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- within row class -->
+  
+    </div>
+    <!-- end row -->
+  </div>
+  
+</body>
+</html>
